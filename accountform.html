@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Quintor</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="/"><i class="fas fa-home"></i> home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+            <a class="nav-link" href="#"><i class="fas fa-user"></i> klantgegevens</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-clipboard-list"></i> rekeing overzicht</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-money-bill-wave"></i> overboeking</a>
+            </li>             
+        </ul>
+        </div>
+         <a href="/"><button class="btn btn-secondary my-2 my-sm-0" type="submit">Log test@test.nl uit</button></a>
+    </nav>
+    <div class="container-fluid">       
+        <div class="card">
+            <div class="card-header">
+                Gegevens voor&nbsp;<span id="initials"></span>&nbsp;<span id="lastname"></span>
+            </div>
+            <div class="card-body">
+                <form method="post" action="/api/accountDetails">
+                    <h2>Klantgegevens</h2>
+                    <div class="form-group row">
+                        <label for="inputInitials" class="col-md-3 col-form-label">Voorletters</label>
+                        <div class="col-md-3">
+                            <input type="text" name="initials" class="form-control" id="inputInitials" placeholder="" required
+                            onchange="initialsChanged()">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputLastname" class="col-md-3 col-form-label">Achternaam</label>
+                        <div class="col-sm-4">
+                            <input type="text" name="lastname" class="form-control" id="inputLastname" placeholder="" required
+                            onchange="lastnameChanged()">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputStreet" class="col-md-3 col-form-label">Straat</label>
+                        <div class="col-sm-4">
+                            <input type="text" name="street" class="form-control" id="inputStreet" placeholder="" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputHousenumber" class="col-md-3 col-form-label">Huisnummer</label>
+                        <div class="col-md-3">
+                            <input type="number" name="housenumber" class="form-control" id="inputHousenumber" placeholder="" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputCity" class="col-md-3 col-form-label">Plaats</label>
+                        <div class="col-sm-4">
+                            <input type="text" name="city" class="form-control" id="inputCity" placeholder="" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputZipcode" class="col-md-3 col-form-label">Postcode</label>
+                        <div class="col-md-3">
+                            <input type="text" name="zipcode" class="form-control" id="inputZipcode" placeholder="" pattern="[0-9]{4}[A-Za-z]{2}" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputBsn" class="col-md-3 col-form-label">BSN</label>
+                        <div class="col-sm-4">
+                            <input type="text" name="bsn" class="form-control" id="inputBsn" placeholder="" pattern="^[0-9]{9}$" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputBirthday" class="col-md-3 col-form-label">Geboorte datum</label>
+                        <div class="col-sm-4">
+                            <input type="date" name="birthdate" class="form-control" id="inputBirthday" placeholder="" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPhonenumber" class="col-md-3 col-form-label">Tel.nr</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" id="inputPhonenumber" placeholder="" 
+                            name="phonenumber"
+                            regex="^((\+|00(\s|\s?\-\s?)?)31(\s|\s?\-\s?)?(\(0\)[\-\s]?)?|0)[1-9]((\s|\s?\-\s?)?[0-9])((\s|\s?-\s?)?[0-9])((\s|\s?-\s?)?[0-9])\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]\s?[0-9]$"
+                            required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputEmail" class="col-md-3 col-form-label">Email</label>
+                        <div class="col-sm-4">
+                            <input type="email" class="form-control" id="inputEmail" placeholder="" name="email" required>
+                        </div>
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Opslaan"></input>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function initialsChanged() {
+        var x = document.getElementById("inputInitials").value;
+        document.getElementById("initials").innerHTML = x;
+    }
+    function lastnameChanged() {
+        var x = document.getElementById("inputLastname").value;
+        document.getElementById("lastname").innerHTML = x;
+    }
+</script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="#">Quintor</a>
+		<div class="collapse navbar-collapse">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+				<a class="nav-link" href="/"><i class="fas fa-home"></i> home <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+				<a class="nav-link" href="/login"><i class="fas fa-money-bill-wave"></i> aanmelden</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	
+	<div class="container-fluid" style="margin-top:15px;">
+		<div class="row">
+			<div class="col-3"><strong>EMAIL</strong></div>
+			<div class="col"><strong>STREET</strong></div>
+			<div class="col"><strong>HOUSE N</strong></div>
+			<div class="col"><strong>CITY</strong></div>  
+			<div class="col"><strong>INITIALS</strong></div>
+			<div class="col"><strong>LASTNAME</strong></div>
+		</div>
+		
+		<% accounts.forEach(function(account) { %>
+			<div class="row">
+				<div class="col-3"><%= account.email %></div>
+				<div class="col"><%= account.street %></div>
+				<div class="col"><%= account.housenumber %></div>
+				<div class="col"><%= account.city %></div>  
+				<div class="col"><%= account.initials %></div>
+				<div class="col"><%= account.lastname %></div>
+			</div>
+		<% }); %>
+	</div>
+</body>
+</html>
