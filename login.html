@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="#">Quintor</a>
+
+		<div class="collapse navbar-collapse">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+			<a class="nav-link" href="/"><i class="fas fa-home"></i> home</a>
+			</li>
+			<li class="nav-item active">
+			<a class="nav-link" href="/login.html"><i class="fas fa-money-bill-wave"></i> aanmelden <span class="sr-only">(current)</span></a>
+			</li>
+		</div>
+    </nav>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-6">
+                <h1 style="text-align: center">Quintor Bank</h1>           
+                <div class="card">
+                <div class="card-header">
+                    Meld je aan
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="/api/login">
+                        <div class="form-group">
+                          <input type="email" class="form-control" id="username" name="username" placeholder="Gebruikersnaam" required>
+                        </div>
+                        <div class="form-group">
+                          <input type="password" class="form-control" id="password" name="password" placeholder="Wachtwoord" required>
+                        </div>
+                        <button type="submit" class="btn btn-block btn-primary">Aanmelden</button>
+                    </form>
+                </div>
+                </div>
+            </div>
+        </div>       
+    </div>
+</body>
+</html>
